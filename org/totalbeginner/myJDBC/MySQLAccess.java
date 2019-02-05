@@ -15,10 +15,11 @@ public class MySQLAccess {
     public void readDataBase() throws Exception {
         try {
             // This will load the MySQL driver, each DB has its own driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             // Setup the connection with the test DataBase - EVERYONE HAS ACCESS, PLEASE BE CAREFUL!!
             // Obviously, if you were distributing this file, you would not include the username and password. There are other ways...
-            connect = DriverManager.getConnection("jdbc:mysql://54.89.64.80/CS485?user=CS485&password=WinonaState");
+            //connect = DriverManager.getConnection("jdbc:mysql://54.89.64.80/CS485?user=vi6950rw&password=KxzgsMViBF9JxzLs6Gfa");
+            connect = DriverManager.getConnection("jdbc:mysql://50.116.3.147/CS485?user=CS485&password=WinonaState");
 
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();
@@ -44,13 +45,13 @@ public class MySQLAccess {
             String studentID = resultSet.getString("StudentID");
             String firstName = resultSet.getString("FirstName");
             String lastName = resultSet.getString("LastName");
-            String departmentID = resultSet.getString("DepartmentID");
-            String advisorID = resultSet.getString("AdvisorID");
+            //String departmentID = resultSet.getString("DepartmentID");
+            //String advisorID = resultSet.getString("AdvisorID");
             System.out.println("StudentID: " + studentID);
             System.out.println("First Name: " + firstName);
             System.out.println("Last Name: " + lastName);
-            System.out.println("DepartmentID: " + departmentID);
-            System.out.println("AdvisorID: " + advisorID);
+            //System.out.println("DepartmentID: " + departmentID);
+            //System.out.println("AdvisorID: " + advisorID);
         }
     }
 
